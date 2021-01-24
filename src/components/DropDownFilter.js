@@ -1,15 +1,30 @@
 import React, { useMemo } from "react";
 
-export const DropDownFilter = ({ column }) => {
-	const { filterValue, setFilter } = column;
+export default function DropDownFilter({
+	column: { filterValue, setFilter, preFilteredRows, id },
+}) {
+	const options = React.useMemo(() => {
+		const options = new Set();
+		preFilteredRows.forEach((row) => {
+			options.add(row.values[id]);
+		});
+		return [...options.values()];
+	}, [id, preFilteredRows]);
 
+	// Render a multi-select box
 	return (
-		<span>
-			Search:{""}
-			<input
-				value={filterValue || ""}
-				onChange={(e) => setFilter(e.target.value)}
-			></input>
-		</span>
+		<select
+			value={filterValue}
+			onChange={(e) => {
+				setFilter(e.target.value || undefined);
+			}}
+		>
+			<option value="">All</option>
+			{options.map((option, i) => (
+				<option key={i} value={option}>
+					{option}
+				</option>
+			))}
+		</select>
 	);
-};
+}
