@@ -1,0 +1,73 @@
+table {
+	width: 95%;
+	margin: 3rem auto;
+	border-collapse: collapse;
+}
+
+table td,
+table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	border: 1px solid black;
+}
+
+table tr:nth-child(even) {
+	background-color: #cfcfcf;
+}
+
+table tr:hover {
+	background-color: rgb(230, 230, 230);
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #41d1eb;
+	font-size: 1.25rem;
+	color: rgb(37, 54, 38);
+}
+
+img {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+a {
+	display: inline-block;
+	border-radius: 0.55em;
+	min-width: 75px;
+	text-align: center;
+	transition: transform 150ms ease-in-out, opacity 250ms linear;
+}
+
+a:hover,
+a:focus {
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
+.text {
+	font-size: 0.8rem;
+}
+
+button {
+	display: inline-block;
+	text-decoration: none;
+	color: var(--clr-text, white);
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	padding: 0.75em 1.25em;
+	border-radius: 0.55em;
+	margin-left: 1.2rem;
+	min-width: 175px;
+	text-align: center;
+	background: var(--clr-accent, rgb(0, 34, 128));
+	border: none;
+}
+button:hover,
+button:focus {
+	cursor: pointer;
+	border: none;
+}

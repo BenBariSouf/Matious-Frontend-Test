@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { ReactTable } from "./components/ReactTable";
+import HeadingContent from "./components/HeadingContent";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			{/* HeadingContent Component */}
+			<HeadingContent />
+
+			{/* ReactTable Component */}
+			<ReactTable />
+		</div>
+	);
 }
 
 export default App;
